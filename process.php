@@ -9,12 +9,17 @@ $name2 = $_POST['name2'];
 $images1 = $_POST['images1'];
 $images2 = $_POST['images2'];
 $email = $_POST['email'];
-$q = "INSERT INTO `images` ( `id` ,`email`, `group1` , `group2` , `images1` , `images2` , `postdate` )
+$q = "INSERT INTO `ia-collage` ( `id` ,`email`, `groupname` , `date` )
 VALUES (
-NULL ,'$email', '$name1', '$name2', '$images1', '$images2', NOW()
-);";
+NULL ,'$email', '$name1', NOW());";
 //echo $q;
-if(mysql_query($q))
+$ins=mysql_query($q);
+$id=mysql_insert_id();
+
+$r = mysql_query("INSERT INTO `ia-collage-images` (`groupid` ,`url`)
+VALUES ('$id', '$images1')");
+
+if($ins)
 echo "Successfully Submitted";
 else
 echo "Error";
@@ -47,7 +52,7 @@ die();
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_REFERER, /* Enter the URL of your site here */);
+curl_setopt($ch, CURLOPT_REFERER/*,  Enter the URL of your site here */);
 $body = curl_exec($ch);
 curl_close($ch);
 

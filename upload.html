@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>InArt</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="fileuploader.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="fileuploader.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script>
+var images="";
+$(document).ready(function(){ 
+  
+  $('#submit').bind('click',function(){
+  var email = $('#email').val();
+   $.ajax({
+					url: "process.php",
+					type: "POST",            
+					cache	: false,
+					data: 'q=backimages&images='+images+'&email='+email,
+					success: function(data) {
+						$('#msg').html(data);
+						
+						 window.location='bgselect.php';
+					}
+		 });
+  
+  });
+  
+  });
+</script>
+</head>
+<body>
+<div id="wrapper">
+  <div class="personal">
+    <div class="m10 ml0">
+      <div id="logo" class="fl"><a href=""><img src="images/logo.png"/></a></div>
+      <div class="cl"></div>
+    </div>
+    <div class="fr mt10"></div>
+    <!--  <div class="separator"></div>-->
+    <div class="cl"></div>
+    <div id='searchpanel' style="">
+      <div class="basic leo-module mod-util" id="refine-search">
+        <div id="wrapper2">
+          <div id="note" class="fl" style="padding-bottom:10px;">Note: You can drag and drop pictures here (Only for Firefox and Chrome). You can also select multiple files at a time. </div>
+          <div>
+            <div class="cl"></div>
+            <div class="item fl">
+				<div style="padding-bottom:10px;"> <div style="width:60px;display:inline-block;">Email:</div><input type="text" name="email" id="email"/><span style="padding-left:10px;color:#333333;font-size:11px;font-weight:normal;width:100px;display:inline;">i.e. something@domain.com</span></div>  
+              <div id="file-upload">
+                <div class="qq-uploader">
+                  <div class="qq-upload-drop-area" style="display: block;"><span>Drop files here to upload</span></div>
+                  <div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Upload
+                    <input type="file" multiple="multiple" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;">
+                  </div>
+                  <ul class="qq-upload-list">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div class="cl"></div>
+		   <div class="cl"></div>
+			  <input type="button" id="submit" name="selectimages" value="Submit"/> <span style="font-weight:bold;" id="msg"></span>
+        </div>
+        <div class="cl"></div>
+         
+      </div>
+    </div>
+  </div>
+  <script>        
+        function createUploader(){            
+ 			var uploader = new qq.FileUploader({
+            element: document.getElementById('file-upload'),
+            params: {type:'album'},
+            action: "php.php",
+            debug: false,
+            allowedExtensions: ['jpg', 'jpeg', 'png', 'gif', 'bmp'],
+            onProgress: function(id, fileName, loaded, total){
+                var progress;
+                progress = Math.floor(loaded/total)*100;
+            },
+            onComplete: function(id, fileName, responseJSON){
+           			images = images+ fileName+','; 
+           			 $('.qq-upload-success').last().html('');
+					 $('.qq-upload-success').last().html('<div class="select"></div><a class="check" href="#"><img class="imagedropshadow" width="80" height="80" src="uploads/'+fileName+'"/></a>');
+                
+			 }
+			 });      
+        }
+        
+        // in your app create uploader as soon as the DOM is ready
+        // don't wait for the window to load  
+        window.onload = createUploader;     
+    </script>
+ 
+
+
+</div>
+</body>
+</html>

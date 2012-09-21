@@ -117,9 +117,9 @@ $(document).ready(function(){
  	$('#selectimages').live('click',function(){
  		
 		
-		 $('.home').removeClass('active');
-	     $('.upload').removeClass('active'); 
-		 $('.final').addClass('active');  
+		$('.home').removeClass('active');
+	    $('.upload').removeClass('active'); 
+		$('.final').addClass('active');  
 		$('#wrapper2').hide();
 		$('#wrapper3').show();
 	    console.log(slectedImages);
@@ -189,7 +189,7 @@ $(document).ready(function(){
 				$("#added"+g_id).animate({"margin-top": "-50px", "z-index":"999"}, 450);
 				$("#added"+g_id).animate({"margin-top": "0px","opacity" : "0" }, 450);
 			},
-			 out: function(event, ui) {
+			 over: function(event, ui) {
 			 	var m_id = $(ui.draggable).attr('rel');
 				var g_id = $(this).attr('id');			 	
 			 	$(ui.draggable).hide("explode", 1000);
@@ -252,20 +252,27 @@ $(document).ready(function(){
 			 alert('Email address is required');			
 		}		
 		else{
-		
-			 $.ajax({
-						url: "process.php",
-						type: "POST",            
-						cache	: false,
-						data: 'q=save&name1='+grp1+'&name2='+grp2+'&images1='+grpimg1+'&images2='+grpimg2+'&email='+email,
-						success: function(data) {
-						
-							$('#various1').click();
-						
-						}
-			 });
-		
-		 
+			
+			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  
+			   if(reg.test(email) == false) {
+			 
+				  alert('Invalid Email Address');
+				  return false;
+			   }
+			   else{
+					 $.ajax({
+								url: "process.php",
+								type: "POST",            
+								cache	: false,
+								data: 'q=save&name1='+grp1+'&name2='+grp2+'&images1='+grpimg1+'&images2='+grpimg2+'&email='+email,
+								success: function(data) {
+								
+									$('#various1').click();
+								
+								}
+					 });
+			   }
 		 }
 		
 	}); 
@@ -344,12 +351,12 @@ $(document).ready(function(){
     <div class=" floatright imageupload2">
 	 <h3 style="padding:20px;" class="floatleft">Upload from Flickr</h3>
       <ul class="importfrom">
-        <li>
+        <!--<li>
           <label class="floatleft">User ID</label>
           <img src="images/flkr.png">
           <input type="text" id="flickr" class="floatleft">
           <input type="button" value="Search" class="floatleft buttondefault lineheight search">
-        </li>
+        </li>-->
         <div class="clear" style="height:20px"></div>
         <li>
           <label class="floatleft">Keyword(s)</label>
@@ -409,7 +416,7 @@ $(document).ready(function(){
   </div>
   <div id="wrapper3" style="display:none;padding:10px">
     <div id="note" class="fl note" style="display:none;" >
-      <h1>Your selected images:</h1>
+      <!--<h1>Your selected images:</h1>-->
     </div>
     <div id="back" class="fr"><a id='back' href="javascript:;">Change selected images</a></div>
     <div class="cl"></div>
@@ -417,7 +424,7 @@ $(document).ready(function(){
       <div class="scrollContainer" style="display: inline-block; width: 810px;top: 43px;position: relative;"> </div>
       <img class="scrollButtons right" src="images/rightarrow.png"> </div>
     <div class="cl"></div>
-	<div class="groups" id="groupsall">
+	<div class="groups" id="groupsall" style="margin-top:50px;">
 		<div class="group ui-droppable g1" id="1"><span class="groupname1">Group 1</span>
 			<div style="display:none;" class="add" id="added1">
 				<img width="25" height="25" src="images/green.jpg">
@@ -428,7 +435,7 @@ $(document).ready(function(){
 			<ul></ul>
 		</div>
     
-      		<div class="group ui-droppable g2" id="2"><span class="groupname2">Group 2</span>
+      		<!--<div class="group ui-droppable g2" id="2"><span class="groupname2">Group 2</span>
 			<div style="display:none;" class="add" id="added2">
 				<img width="25" height="25" src="images/green.jpg">
 			</div>
@@ -436,13 +443,13 @@ $(document).ready(function(){
 				<img width="25" height="25" src="images/red.jpg">
 			</div>
 			<ul></ul>
-		</div>
+		</div>-->
  
     </div>
     <div class="cl"></div>
     <div style="text-align: center;padding-top:10px;">
 	 <div style="width:60px;display:inline-block;">Email:</div><input type="text" name="email" id="email"/> </br>
-      <input type="button" id="submit" name="submit" value="Submit">
+      <input type="button" id="submit" name="submit" value="Finish">
     </div>
     <span style="font-weight:bold;" id="msg"></span> </div>
   <div class="clear"></div>

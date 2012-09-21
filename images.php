@@ -4,22 +4,25 @@ include 'config.php';
 $email  = $_GET['email'];
 
 
-$q="SELECT * FROM images order by id Desc  limit 1";
+$q="SELECT * FROM `ia-collage-images` order by id Desc";
  
 
 if($email !="")
 {
-$q="SELECT * FROM images where email like '$email' order by id desc limit 1";
- 
+	$q="SELECT * FROM `ia-collage` where email like '$email'";
+	$result = mysql_query($q);
+	$row = mysql_fetch_array($result);
+ 	$id = $row['id'];
+	$q="SELECT * FROM `ia-collage-images` where groupid like '$id'";
 }
 $result = mysql_query($q);	
 $row = mysql_fetch_array($result);
 
-$row[images1]  = rtrim($row[images1],',');
-$images1 = explode(',',$row[images1]);
+$row[images1]  = rtrim($row[url],',');
+$images1 = explode(',',$row[url]);
 
-$row[images2]  = rtrim($row[images2],',');
-$images2 = explode(',',$row[images2]);
+/*$row[images2]  = rtrim($row[images2],',');
+$images2 = explode(',',$row[images2]);*/
  
 ?>
 
@@ -125,7 +128,7 @@ $(document).ready(function(){
 			<div style="display:none;" class="remove" id="removed2">
 				<img width="25" height="25" src="images/red.jpg">
 			</div>
-			<ul>
+			<!--<ul>
 			
 				<?php 
 	
@@ -139,7 +142,7 @@ $(document).ready(function(){
 		 
 		 </li>
 	<?php } ?> 
-			</ul>
+			</ul>-->
 		</div>
  
     </div>
