@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document
+
+| Core Stylesheet	
+| Created by:	 Bachiter Singh
+| Date Created:	 05-01-2012
+| Stylesheet:	 dd-styles.css
+| Version:	 1.0.0
+| Last Updated: 05-01-2012
+  Licensed under D developerz
+  http://www.ddeveloperz.com/
+*/ 
+@import url('dd-reset.css');
+@import url('dd-grid12.css');
+@import url('dd-pages.css');
+@import url('dd-text.css');

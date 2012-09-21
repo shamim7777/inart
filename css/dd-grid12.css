@@ -1,0 +1,381 @@
+@charset "utf-8";/*
+ ____      
+|  _ \       |                 |                
+| | | |   ___| ___        ___  |  ___  ___  ___  ___  ____
+| | | |  |   ||    \    /|     | |   ||   ||    |   |    /
+| |_| |  |   ||---  \  / |---  | |   ||   ||--- |---    /  
+|____/   |___||___   \/  |___  | |___||___||___ |   \  /___
+                                      |               
+                                      | 
+*/
+
+/*
+| Grids Stylesheet(12grid)	
+| Created by:	 Bachiter Singh
+| Date Created:	 05-01-2012
+| Stylesheet:	 dd-grid12.css
+| Version:	 1.0.0
+| Last Updated: 05-01-2012
+  Licensed under D developerz
+  http://www.ddeveloperz.com/
+*/
+body {
+  min-width: 960px;
+}
+
+                         /****************************
+						-----------------------------
+								dd_Container
+						-----------------------------
+						*****************************/
+
+
+.dd_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+						/****************************
+						-----------------------------
+								global dd_box
+						-----------------------------
+						*****************************/
+
+.dd_box_1,
+.dd_box_2,
+.dd_box_3,
+.dd_box_4,
+.dd_box_5,
+.dd_box_6,
+.dd_box_7,
+.dd_box_8,
+.dd_box_9,
+.dd_box_10,
+.dd_box_11,
+.dd_box_12 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.poke_1, .pick_1,
+.poke_2, .pick_2,
+.poke_3, .pick_3,
+.poke_4, .pick_4,
+.poke_5, .pick_5,
+.poke_6, .pick_6,
+.poke_7, .pick_7,
+.poke_8, .pick_8,
+.poke_9, .pick_9,
+.poke_10, .pick_10,
+.poke_11, .pick_11 {
+  position: relative;
+}
+
+                        /****************************
+						-----------------------------
+						dd_box -> Children (dd_first, dd_last)
+					         dd_first~ in left
+					         dd_last~ in right
+						-----------------------------
+						*****************************/
+
+.dd_first {
+  margin-left: 0;
+}
+
+.dd_last {
+  margin-right: 0;
+}
+
+
+
+                        /****************************
+						-----------------------------
+						  global dd_box 16 columns
+						-----------------------------
+						*****************************/
+
+.dd_container .dd_box_1 {
+  width: 60px;
+}
+
+.dd_container .dd_box_2 {
+  width: 140px;
+}
+
+.dd_container .dd_box_3 {
+  width: 220px;
+}
+
+.dd_container .dd_box_4 {
+  width: 300px;
+}
+
+.dd_container .dd_box_5 {
+  width: 380px;
+}
+
+.dd_container .dd_box_6 {
+  width: 460px;
+}
+
+.dd_container .dd_box_7 {
+  width: 540px;
+}
+
+.dd_container .dd_box_8 {
+  width: 620px;
+}
+
+.dd_container .dd_box_9 {
+  width: 700px;
+}
+
+.dd_container .dd_box_10 {
+  width: 780px;
+}
+
+.dd_container .dd_box_11 {
+  width: 860px;
+}
+
+.dd_container .dd_box_12 {
+  width: 940px;
+}
+
+
+                        /****************************
+						-----------------------------
+						 dd_pre Extra Space on left
+						-----------------------------
+						*****************************/
+
+.dd_container .dd_pre_1 {
+  padding-left: 80px;
+}
+
+.dd_container .dd_pre_2 {
+  padding-left: 160px;
+}
+
+.dd_container .dd_pre_3 {
+  padding-left: 240px;
+}
+
+.dd_container .dd_pre_4 {
+  padding-left: 320px;
+}
+
+.dd_container .dd_pre_5 {
+  padding-left: 400px;
+}
+
+.dd_container .dd_pre_6 {
+  padding-left: 480px;
+}
+
+.dd_container .dd_pre_7 {
+  padding-left: 560px;
+}
+
+.dd_container .dd_pre_8 {
+  padding-left: 640px;
+}
+
+.dd_container .dd_pre_9 {
+  padding-left: 720px;
+}
+
+.dd_container .dd_pre_10 {
+  padding-left: 800px;
+}
+
+.dd_container .dd_pre_11 {
+  padding-left: 880px;
+}
+
+                       /****************************
+						-----------------------------
+						 dd_post Extra Space on right
+						-----------------------------
+					   *****************************/
+
+.dd_container .dd_post_1 {
+  padding-right: 80px;
+}
+
+.dd_container .dd_post_2 {
+  padding-right: 160px;
+}
+
+.dd_container .dd_post_3 {
+  padding-right: 240px;
+}
+
+.dd_container .dd_post_4 {
+  padding-right: 320px;
+}
+
+.dd_container .dd_post_5 {
+  padding-right: 400px;
+}
+
+.dd_container .dd_post_6 {
+  padding-right: 480px;
+}
+
+.dd_container .dd_post_7 {
+  padding-right: 560px;
+}
+
+.dd_container .dd_post_8 {
+  padding-right: 640px;
+}
+
+.dd_container .dd_post_9 {
+  padding-right: 720px;
+}
+
+.dd_container .dd_post_10 {
+  padding-right: 800px;
+}
+
+.dd_container .dd_post_11 {
+  padding-right: 880px;
+}
+
+/* `poke Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.dd_container .poke_1 {
+  left: 80px;
+}
+
+.dd_container .poke_2 {
+  left: 160px;
+}
+
+.dd_container .poke_3 {
+  left: 240px;
+}
+
+.dd_container .poke_4 {
+  left: 320px;
+}
+
+.dd_container .poke_5 {
+  left: 400px;
+}
+
+.dd_container .poke_6 {
+  left: 480px;
+}
+
+.dd_container .poke_7 {
+  left: 560px;
+}
+
+.dd_container .poke_8 {
+  left: 640px;
+}
+
+.dd_container .poke_9 {
+  left: 720px;
+}
+
+.dd_container .poke_10 {
+  left: 800px;
+}
+
+.dd_container .poke_11 {
+  left: 880px;
+}
+
+/* `pick Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.dd_container .pick_1 {
+  left: -80px;
+}
+
+.dd_container .pick_2 {
+  left: -160px;
+}
+
+.dd_container .pick_3 {
+  left: -240px;
+}
+
+.dd_container .pick_4 {
+  left: -320px;
+}
+
+.dd_container .pick_5 {
+  left: -400px;
+}
+
+.dd_container .pick_6 {
+  left: -480px;
+}
+
+.dd_container .pick_7 {
+  left: -560px;
+}
+
+.dd_container .pick_8 {
+  left: -640px;
+}
+
+.dd_container .pick_9 {
+  left: -720px;
+}
+
+.dd_container .pick_10 {
+  left: -800px;
+}
+
+.dd_container .pick_11 {
+  left: -880px;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+
+.clearfix:before,
+.clearfix:after,
+.dd_container:before,
+.dd_container:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.dd_container:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix,
+.dd_container {
+  zoom: 1;
+}

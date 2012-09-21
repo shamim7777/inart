@@ -1,0 +1,141 @@
+  html, body {height: 100%; margin:0;}
+    body {min-width:960px;font:12px/12px Tahoma, Arial, serif; }
+#wrapper
+ {
+    width:950px;
+ 	margin:auto;
+ }
+ .separator
+ {
+  margin:20px 0;
+  border:1px dotted #FFCC66;
+ }
+ #box
+  {
+   border: 1px solid #DCDCDC;
+  margin:15px;
+  padding:20px;
+  margin-left:5px;
+  box-shadow: 0px 0px 5px #ccc;
+  -moz-box-shadow: 0px 0px 5px #ccc;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+  height:1300px;
+  
+  }
+  
+em {
+    color: #CC0000;
+    font-size: 120%;
+    font-weight: bold;
+    padding-right: 3px;
+}
+  .header div
+  {
+ 	padding:5px 5px; 
+	width:150px;
+	 
+	background-color:#F3F3F3;
+  }
+    .header-item div
+  {
+  	padding:5px 5px; 
+	width:150px;	 
+	 
+  }
+  .labl
+  { width:150px;}
+  
+  .item
+  {
+  	padding-top:5px;
+  }
+  .cl
+  {
+  	clear:both;
+  }
+  .fl
+  {
+  	float:left;
+  }
+    .fr
+  {
+  	float:right;
+  }
+  .m10
+  {
+  	margin:10px;
+  }
+  .m5
+  {
+  	margin:5x;
+  }
+  .mt5
+  {
+  	margin:5x;
+  }
+   .mt10
+  {
+  	margin:10px;
+  }
+     .ml0
+  {
+  	margin-left:0px;
+  }
+  .b
+  {
+  	font-weight:bold;
+  }
+  label{ clear:both;}
+  
+  label.error {
+    color: red;
+    display: block;
+
+    width: 250px;
+}
+
+.qq-upload-drop-area {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px dashed;
+    height: 100%;
+    left: 0;
+    margin-bottom: 10px;
+    min-height: 70px;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 450px;
+    z-index: 2;
+}
+.qq-upload-drop-area span {
+    color: #C1C1C1;
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.imagedropshadow {
+	padding: 5px;
+	border: solid 1px #EFEFEF;
+}
+a:hover img.imagedropshadow {
+	border: solid 1px #CCC;
+	-moz-box-shadow: 1px 1px 5px #999;
+	-webkit-box-shadow: 1px 1px 5px #999;
+        box-shadow: 1px 1px 5px #999;
+}
+
+.grouplist{
+float:left;
+margin:0; padding:0; line-height:15px; list-style:none; font-size:12px; float:left; padding-right:10px; padding-bottom:10px;
+}
+
+.droparea span{
+	margin-bottom:10px;
+}
+
+
+
+
+
